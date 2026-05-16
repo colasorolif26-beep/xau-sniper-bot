@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: xau-sniper-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 2 -b 0.0.0.0:$PORT bot:app
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: 8934180662:AAFW-wqfZW93vzWCcjyBynE-fZt_RydEk0M
+      - key: TELEGRAM_CHAT_ID
+        value: "5852405216"
+      - key: WEBHOOK_SECRET_KEY
+        value: xau_sniper_rolif_2024
